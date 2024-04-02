@@ -20,7 +20,9 @@ async function logUser(){
 
     const response = await request.text();
 
-    if(response == "OK"){
+    if(response != "FAIL"){
+        localStorage.token = response;
+        localStorage.email = data.email;
         window.location.href = "users.html";
     }else{
         alert("The credentials are not correct, please try again.");
